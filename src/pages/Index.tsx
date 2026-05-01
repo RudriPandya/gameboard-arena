@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { LADDERS, SNAKES, TOTAL_CELLS, type Player } from "@/game/constants";
 import { toast } from "sonner";
 import { RotateCcw, Trophy, Users } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Index = () => {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -127,13 +128,16 @@ const Index = () => {
     <main className="min-h-screen px-4 py-6 sm:py-10">
       <div className="max-w-6xl mx-auto">
         <header className="flex flex-wrap items-center justify-between gap-3 mb-6">
-          <div>
-            <h1 className="font-display text-2xl sm:text-3xl">
-              <span className="text-gradient">SNAKES</span> & <span className="text-accent">LADDERS</span>
-            </h1>
-            <p className="text-xs text-muted-foreground flex items-center gap-1.5 mt-1">
-              <Users className="h-3 w-3" /> {players.length} players · First to 100 wins
-            </p>
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="Snakes & Ladders logo" width={48} height={48} className="h-12 w-12 rounded-xl shadow-glow" />
+            <div>
+              <h1 className="font-display text-2xl sm:text-3xl">
+                <span className="text-gradient">SNAKES</span> & <span className="text-accent">LADDERS</span>
+              </h1>
+              <p className="text-xs text-muted-foreground flex items-center gap-1.5 mt-1">
+                <Users className="h-3 w-3" /> {players.length} players · First to 100 wins
+              </p>
+            </div>
           </div>
           <div className="flex gap-2">
             {winnerId && (
