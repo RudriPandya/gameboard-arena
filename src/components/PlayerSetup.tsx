@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Plus, Trash2, Play, Sparkles } from "lucide-react";
 import { PLAYER_COLORS, type Player } from "@/game/constants";
+import logo from "@/assets/logo.png";
 
 interface PlayerSetupProps {
   onStart: (players: Player[]) => void;
@@ -62,6 +63,7 @@ export const PlayerSetup = ({ onStart }: PlayerSetupProps) => {
     <div className="min-h-screen flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-xl">
         <div className="text-center mb-10">
+          <img src={logo} alt="Snakes & Ladders logo" width={112} height={112} className="h-24 w-24 sm:h-28 sm:w-28 mx-auto mb-5 rounded-2xl shadow-glow animate-token-bounce" />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card/60 border border-border mb-5">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             <span className="text-xs tracking-widest font-semibold text-muted-foreground">CLASSIC BOARD GAME</span>
